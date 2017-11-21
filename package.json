@@ -124,7 +124,7 @@
     "@bower_components/pikaday": "owenmead/Pikaday#1.5.1",
     "@bower_components/pouchdb-load": "nolanlawson/pouchdb-load#1.4.0",
     "@bower_components/pretender": "trek/pretender#0.10.0",
-    "@bower_components/route-recognizer": "tildeio/route-recognizer#0.1.1",
+    "@bower_components/route-recognizer": "tildeio/route-recognizer#0.3.3",
     "@bower_components/typeahead.js": "twitter/typeahead.js#0.11.1",
     "@bower_components/jsbarcode": "git+https://github.com/HospitalRun/JsBarcode.git",
     "electron-compile": "^6.3.0",
