@@ -1,7 +1,6 @@
 PATH       := node_modules/.bin:$(PATH)
 SHELL      := /usr/bin/env bash
 # ------------------------------------------------------------------------------
-bower      := $(shell cat .bowerrc | python -c 'import json,sys;print json.load(sys.stdin)["directory"];')
 
 .PHONY: all
 all: test build
@@ -19,7 +18,7 @@ build: install
 	@./script/build
 
 .PHONY: server
-server: install node_modules/bower node_modules/ember-cli server/config.js
+server: install node_modules/ember-cli server/config.js
 	@./script/server
 
 server/config.js:
@@ -35,7 +34,7 @@ serve:
 	@$(MAKE) -j2 couchdb server
 
 .PHONY: install
-install: node_modules $(bower)
+install: node_modules
 
 node_modules: package.json
 	@npm install
@@ -43,7 +42,3 @@ node_modules: package.json
 
 node_modules/%:
 	@npm install $*
-
-$(bower): node_modules/bower bower.json
-	@bower install --allow-root
-	@touch $@
