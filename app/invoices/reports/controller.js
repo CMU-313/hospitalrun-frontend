@@ -141,6 +141,7 @@ export default AbstractReportController.extend(UserSession, NumberFormat, {
       this.showProgressModal();
           this._findPaymentsByDate().then((payments) => {
             this._generateByDepartmentOrByIncidentCategoryReport(payments, reportType);
+            this.set('showReportResults', true);
           }).catch((ex) => {
             console.log('Error:', ex);
             this.closeProgressModal();
