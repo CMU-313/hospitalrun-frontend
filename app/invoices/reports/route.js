@@ -1,11 +1,8 @@
 import AbstractIndexRoute from 'hospitalrun/routes/abstract-index-route';
 import Ember from 'ember';
 import { translationMacro as t } from 'ember-i18n';
-
 export default AbstractIndexRoute.extend({
-  pageTitle: Ember.computed('i18n.locale', () => {
-    return t('patients.titles.patientReport');
-  }),
+  pageTitle: t('Daily Payment Reports'),
 
   // No model for reports; data gets retrieved when report is run.
   model() {

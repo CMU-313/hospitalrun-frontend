@@ -69,6 +69,7 @@ Router.map(function() {
     this.route('review', { path: '/review/:invoice_id' });
     this.route('edit', { path: '/edit/:invoice_id' });
     this.route('search', { path: '/search/:search_text' });
+    this.route('reports');
   });
 
   this.route('labs', function() {
@@ -93,14 +94,6 @@ Router.map(function() {
     this.route('operative-plan', { path: '/operative-plan/:operative-plan_id' });
     this.route('operation-report', { path: '/operation-report/:operation-report_id' });
     this.route('outpatient');
-  });
-
-  this.route('dailypayments', function() {
-    this.route('reports');
-  });
-
-  this.route('dailypayments2', function() {
-    this.router('reports')
   });
 
   this.route('pricing', function() {

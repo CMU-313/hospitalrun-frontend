@@ -1,0 +1,31 @@
+<div class="panel panel-primary">
+ 
+  <div class="panel-footer">
+    <button class="btn btn-primary" {{action 'generateReport'}}>{{t 'Generate Daily Payments'}}</button>
+  </div>
+</div>
+
+{{#if showReportResults}}
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{reportTitle}}{{nav-paging paginationProps=paginationProps }}</h3>
+    </div>
+    <div class="panel-body">
+      <table class="table">
+        <tr class="table-header">
+          {{#each reportHeaders as |reportHeader|}}
+            <th>
+              {{reportHeader}}
+            </th>
+          {{/each}}
+        </tr>
+        {{partial "report-rows"}}
+      </table>
+    </div>
+    <div class="panel-footer">
+      <a href={{csvExport}} target="_blank" download="{{reportTitle}}.csv" class="btn btn-primary">{{t 'inventory.reports.export'}}</a>
+
+    </div>
+  </div>
+{{/if}}
+
