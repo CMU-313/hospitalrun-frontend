@@ -146,7 +146,6 @@ export default AbstractReportController.extend(UserSession, NumberFormat, {
             console.log('Error:', ex);
             this.closeProgressModal();
           });
-          break;
     }
   }
 });
