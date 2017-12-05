@@ -95,6 +95,14 @@ Router.map(function() {
     this.route('outpatient');
   });
 
+  this.route('dailypayments', function() {
+    this.route('reports');
+  });
+
+  this.route('dailypayments2', function() {
+    this.router('reports')
+  });
+
   this.route('pricing', function() {
     this.route('imaging');
     this.route('lab');
