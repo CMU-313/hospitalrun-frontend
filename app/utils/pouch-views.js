@@ -312,6 +312,13 @@ let designDocs = [{
   ),
   version: 1
 }, {
+  name: 'invoices_by_date',
+  function: generateView('invoices',
+    `${generateDateForView('billDate')}
+    emit([billDate, doc._id]);`
+  ),
+  version: 1
+}, {
   name: 'open_incidents_by_user',
   function: generateView('incident',
     `if (doc.data.status !== "Closed") {
